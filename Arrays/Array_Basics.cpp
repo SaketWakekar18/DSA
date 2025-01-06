@@ -85,9 +85,26 @@ void extremeElements(int arr[], int size) {
 	}
 }
 
+void NegativeElementstoLeft(int arr[], int size){
+    int left=0;
+    int index=0;
+    int right=size-1;
+    cout<<"\nNegativeElementstoLeft: ";
+    while(index<=right){
+        if(arr[index]<0){
+            swap(arr[index],arr[left]);
+            left++;
+            index++;
+        }
+        else{
+            index++;
+        }
+    }
+}
+
 int main()
 {
-	int arr[] = {1,19,81,47,0,11,29};
+	int arr[] = {1,-19,81,-47,0,-11,29};
 	int size = 7;
 	int target = 47;
 	printArray(arr,size);
@@ -97,6 +114,8 @@ int main()
 	maximumElement(arr,size);
 	//reverseArray(arr,size);
 	extremeElements(arr,size);
+	NegativeElementstoLeft(arr,size);
+	printArray(arr,size);
 	// if(ans == true){
 	//     cout<<"Element found";
 	// }
